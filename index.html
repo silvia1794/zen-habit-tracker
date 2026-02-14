@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen Room Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="room-container">
+        
+        <section class="card budget-section">
+            <div class="header">
+                <span class="icon">🐈</span>
+                <h2>Finanze</h2>
+            </div>
+            <div class="budget-display">
+                <p>Budget Disponibile:</p>
+                <h3 id="budget-amount">€ 0</h3>
+            </div>
+            <div class="budget-controls">
+                <input type="number" id="expense-input" placeholder="Spesa in €" min="0" step="0.5">
+                <button id="spend-btn">Spendi</button>
+            </div>
+        </section>
+
+        <section class="card study-section">
+            <div class="header">
+                <span class="icon">📜</span>
+                <h2>Studio</h2>
+            </div>
+            <div id="study-controls">
+                <p>Cosa hai fatto oggi?</p>
+                <div class="study-buttons">
+                    <button class="study-btn" data-type="Studio">Studio</button>
+                    <button class="study-btn" data-type="Lezione">Lezione</button>
+                    <button class="study-btn" data-type="Simulazione">Simulazione</button>
+                </div>
+            </div>
+            <div id="study-stamp" class="hidden">
+                <span class="hanko-icon">💮</span>
+                <p id="study-result-text"></p>
+            </div>
+        </section>
+
+        <section class="card water-section">
+            <div class="header">
+                <span class="icon">🌿</span>
+                <h2>Idratazione</h2>
+            </div>
+            <div class="water-grid" id="water-grid">
+                </div>
+        </section>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

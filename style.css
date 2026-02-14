@@ -1,0 +1,176 @@
+:root {
+    --bg-color: #f4eee0; /* Carta di riso */
+    --card-bg: rgba(255, 255, 255, 0.85); /* Semi trasparente */
+    --text-color: #5c4d43; /* Marrone legno scuro */
+    --accent-color: #8badaa; /* Verde salvia */
+    --sakura-color: #ffb7c5; /* Rosa ciliegio */
+    --wood-color: #a88b71;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    /* Un pattern leggero che ricorda il tatami */
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(168, 139, 113, 0.05) 10px, rgba(168, 139, 113, 0.05) 20px);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px;
+}
+
+.room-container {
+    width: 100%;
+    max-width: 400px; /* Perfetto per schermi mobile */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+    backdrop-filter: blur(5px); /* Effetto vetro opaco */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 10px;
+}
+
+.icon {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* --- BUDGET SECTION --- */
+.budget-display {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#budget-amount {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+
+.budget-controls {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid var(--bg-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    color: var(--text-color);
+}
+
+button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* --- STUDY SECTION --- */
+.study-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.study-btn {
+    background-color: var(--wood-color);
+}
+
+#study-stamp {
+    text-align: center;
+    animation: stampFade 0.5s ease-out forwards;
+}
+
+.hanko-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+@keyframes stampFade {
+    0% { transform: scale(2); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- WATER SECTION --- */
+.water-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.water-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.water-item:active {
+    transform: scale(0.9);
+}
+
+.cup-icon {
+    font-size: 2.5rem;
+    transition: opacity 0.3s ease;
+}
+
+.water-label {
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 5px;
+    color: #888;
+}
+
+/* Animazione di apparizione del fiore */
+@keyframes bloom {
+    0% { transform: scale(0) rotate(-45deg); opacity: 0; }
+    50% { transform: scale(1.2) rotate(10deg); }
+    100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+.sakura-icon {
+    animation: bloom 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
